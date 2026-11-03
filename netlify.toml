@@ -1,0 +1,16 @@
+# Sitio estático: no hay build, se publica la carpeta tal cual.
+[build]
+  publish = "."
+  command = ""
+
+# stats.json siempre fresco (no se queda en caché del navegador)
+[[headers]]
+  for = "/stats.json"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+# Las imágenes casi no cambian: caché larga
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
