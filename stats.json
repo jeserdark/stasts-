@@ -1,5 +1,41 @@
 {
-  "actualizado": "1 ago – 29 oct 2026",
-  "seguidores": { "instagram": 4300, "tiktok": 100, "facebook": 3000 },
-  "resultados": { "seguidores": "", "reproducciones": "+2.5 M", "alcance": "+1 M", "interacciones": "" }
+  "actualizado": "2/11/2026, 7:37 p. m.",
+  "seguidores": {
+    "instagram": 4377,
+    "tiktok": 100,
+    "facebook": 3000
+  },
+  "resultados": {
+    "seguidores": "",
+    "reproducciones": "+2.5 M",
+    "alcance": "+1 M",
+    "interacciones": ""
+  },
+  "tarjetas": [
+    {
+      "id": "total",
+      "titulo": "Comunidad total",
+      "valor": null,
+      "nota": "Instagram + Facebook + TikTok"
+    },
+    {
+      "id": "views",
+      "titulo": "Visualizaciones · 30 días",
+      "valor": null,
+      "nota": "Todo el contenido de Instagram"
+    },
+    {
+      "id": "reach",
+      "titulo": "Cuentas alcanzadas · 30 días",
+      "valor": null,
+      "nota": "Cuentas únicas que vieron el contenido"
+    },
+    {
+      "id": "interactions",
+      "titulo": "Interacciones · 30 días",
+      "valor": null,
+      "nota": "Me gusta, comentarios, guardados y compartidos"
+    }
+  ],
+  "reels": {}
 }
