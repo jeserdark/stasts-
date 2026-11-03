@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Millerleydi Hoyos · @soymillerleydi</title>
+<meta name="description" content="Millerleydi Hoyos Arango — mamá, esposa, profe, emprendedora y booklover. Familia, educación, estimulación temprana, moda y loncheras saludables.">
+<meta property="og:title" content="Millerleydi Hoyos · @soymillerleydi">
+<meta property="og:description" content="Alegre, extrovertida, creativa, dedicada.">
+<meta property="og:image" content="img/hero.webp">
+<meta name="theme-color" content="#F5F2EB">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..800,50;1,9..144,300..800,100&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!--
+  IMÁGENES — guarda en la carpeta img/ con estos nombres (si falta alguna, se muestra un respaldo y nada se rompe):
+  img/hero.webp                  Portada (recortada sin fondo, PNG)
+  img/resultados-celular.png    Captura del celular con estadísticas
+  img/reel-01 … reel-09.jpg     Portadas de los reels (3 fijados + los 6 con más vistas), usadas en Galería y Resultados
+  img/familia.webp               Foto familiar de "Mis pilares" (recortada sin fondo, PNG)
+-->
+<style>
+:root{
+  --cream:#F5F2EB; --paper:#FBF9F4;
+  --terra:#C6795D; --terra-2:#C1755A; --brown:#A85F46;
+  --ochre:#E0A55A; --sage:#7A8B6F; --ink:#3D3833;
+  --line:color-mix(in srgb,var(--ink) 12%,transparent);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Manrope',system-ui,sans-serif;
+  --max:1240px; --gut:clamp(16px,4vw,48px);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+::selection{background:var(--terra);color:var(--cream)}
+
+/* grano sutil sobre toda la página */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* tipografía */
+.script{font-family:var(--serif);font-style:italic;font-weight:500;font-variation-settings:"SOFT" 100,"opsz" 144;color:var(--terra-2);letter-spacing:-.02em;line-height:.9}
+.display{font-family:var(--sans);font-weight:800;color:var(--ink);letter-spacing:-.05em;line-height:.88}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--terra-2)}
+.eyebrow::before{content:"";width:28px;height:1.5px;background:currentColor}
+.h2{font-family:var(--sans);font-weight:800;letter-spacing:-.045em;line-height:.95;font-size:clamp(38px,6vw,84px);color:var(--ink)}
+.h2 em{font-family:var(--serif);font-style:italic;font-weight:500;font-variation-settings:"SOFT" 100;color:var(--terra-2);letter-spacing:-.02em}
+
+/* imágenes con respaldo */
+.ph{position:relative;overflow:hidden;background:linear-gradient(140deg,color-mix(in srgb,var(--terra) 22%,var(--cream)),color-mix(in srgb,var(--ochre) 22%,var(--cream)))}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.missing img{display:none}
+.ph.missing::after{content:attr(data-label);position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:12px;font:700 11px/1.3 var(--sans);letter-spacing:.06em;color:var(--brown);opacity:.6}
+.ph.cutout{background:none}
+.ph.cutout img{object-fit:contain}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--cream);font:700 15px/1 var(--sans);padding:16px 26px;border-radius:999px;transition:transform .3s var(--ease),background .3s}
+.btn:hover{transform:translateY(-2px);background:var(--terra-2)}
+.btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn--ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn--ghost:hover{background:var(--cream);box-shadow:inset 0 0 0 1.5px var(--ink)}
+
+/* aparición al hacer scroll */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv[data-d="1"]{transition-delay:.08s}.rv[data-d="2"]{transition-delay:.16s}.rv[data-d="3"]{transition-delay:.24s}.rv[data-d="4"]{transition-delay:.32s}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;width:min(var(--max) - 2*var(--gut),calc(100% - 28px));display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 10px 10px 22px;border-radius:999px;background:color-mix(in srgb,var(--paper) 72%,transparent);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);box-shadow:0 1px 0 var(--line),0 10px 30px -18px rgba(61,56,51,.35);transition:transform .4s var(--ease)}
+.nav.hide{transform:translate(-50%,-140%)}
+.nav__brand{font-family:var(--serif);font-style:italic;font-weight:600;font-size:22px;color:var(--terra-2);font-variation-settings:"SOFT" 100}
+.nav__links{display:flex;gap:26px;font:600 14px/1 var(--sans)}
+.nav__links a{opacity:.7;transition:opacity .2s}
+.nav__links a:hover{opacity:1}
+.nav .btn{padding:12px 20px;font-size:14px}
+
+/* ---------- PORTADA ---------- */
+.hero{position:relative;padding-top:110px;overflow:hidden}
+.hero::before{content:"";position:absolute;width:min(900px,120vw);aspect-ratio:1;right:-18%;top:-20%;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--ochre) 38%,transparent),transparent 70%);filter:blur(10px);pointer-events:none}
+.hero__grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:end}
+.hero__text{padding-bottom:clamp(40px,7vw,96px)}
+.hero__meta{font:600 13px/1 var(--sans);letter-spacing:.04em;opacity:.65;margin-bottom:22px}
+.hero h1 .script{display:block;font-size:clamp(64px,11vw,156px)}
+.hero h1 .display{display:block;font-size:clamp(76px,13vw,184px);margin-top:-.08em}
+.hero__tag{margin-top:28px;max-width:34ch;font-size:clamp(17px,1.5vw,20px);line-height:1.45}
+.hero__tag b{font-weight:700}
+.hero__quote{margin-top:22px;max-width:22ch;padding-left:20px;border-left:3px solid var(--terra);font-family:var(--serif);font-style:italic;font-weight:500;font-variation-settings:"SOFT" 100,"opsz" 72;font-size:clamp(24px,2.4vw,34px);line-height:1.15;letter-spacing:-.01em;color:var(--ink)}
+.hero__quote em{color:var(--terra-2)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;align-items:center}
+.hero__photo{position:relative;justify-self:center;width:100%;max-width:520px}
+.arch{position:relative;aspect-ratio:3/4;border-radius:999px 999px 0 0;background:linear-gradient(180deg,color-mix(in srgb,var(--terra) 30%,var(--cream)),color-mix(in srgb,var(--terra) 55%,var(--cream)));overflow:hidden}
+.arch .ph{position:absolute;inset:6% 0 0;background:none}
+.arch .ph img{object-fit:cover;object-position:top center}
+.arch .ph.missing::after{color:var(--cream);opacity:.9}
+.hero .arch{overflow:visible}
+.hero .arch .ph{inset:auto 0 0 0;height:108%;overflow:visible}
+.hero__photo{margin-top:clamp(40px,7vw,90px);max-width:480px!important}
+.hero .arch .ph img{object-fit:contain;object-position:bottom center;filter:drop-shadow(0 24px 40px rgba(61,56,51,.25))}
+.float{position:absolute;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:color-mix(in srgb,var(--paper) 80%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 14px 34px -16px rgba(61,56,51,.45);font:700 13px/1.15 var(--sans);animation:bob 6s ease-in-out infinite}
+.float i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;color:var(--cream);font-style:normal}
+.float i svg{width:17px;height:17px}
+.float small{display:block;font-weight:500;opacity:.65;font-size:11.5px}
+.float.f1{left:-8%;top:24%}
+.float.f2{right:-6%;top:56%;animation-delay:-3s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+
+.followers{position:relative;background:var(--ink);color:var(--cream)}
+.followers .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.fol{padding:clamp(26px,3.5vw,40px) 0;text-align:center;border-left:1px solid rgba(245,242,235,.12)}
+.fol:first-child{border-left:0}
+.fol__n{font-family:var(--serif);font-weight:400;font-size:clamp(44px,7vw,96px);line-height:1;letter-spacing:-.04em;font-variation-settings:"opsz" 144}
+.fol__net{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font:600 13px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.fol__net svg{width:16px;height:16px}
+
+/* ---------- TEMAS DE INTERÉS (órbita 3D con scroll) ---------- */
+.topics{position:relative;height:260vh}
+.topics__stick{position:sticky;top:0;height:100vh;min-height:620px;display:grid;place-items:center;overflow:hidden}
+.topics__head{position:absolute;top:clamp(84px,12vh,120px);left:0;right:0;text-align:center;z-index:30}
+.topics__head .h2{font-size:clamp(28px,4vw,52px);margin-top:12px}
+.topics__hint{position:absolute;bottom:28px;left:0;right:0;text-align:center;font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;opacity:.5;z-index:30}
+.orbit{position:relative;width:min(1100px,100vw);height:min(560px,70vh);margin-top:60px}
+.orbit__glow{position:absolute;left:50%;top:50%;width:min(560px,80vw);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--terra) 34%,transparent),color-mix(in srgb,var(--ochre) 18%,transparent) 55%,transparent 75%);filter:blur(6px)}
+.orbit__ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:1.5px solid color-mix(in srgb,var(--terra) 30%,transparent);border-radius:50%;pointer-events:none}
+.orbit__center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:20;text-align:center;pointer-events:none;white-space:nowrap}
+.orbit__center .script{display:block;font-size:clamp(48px,7.4vw,108px)}
+.orbit__center .display{display:block;font-size:clamp(50px,7.8vw,116px);margin-top:-.08em}
+.chip{position:absolute;left:50%;top:50%;display:flex;align-items:center;gap:12px;padding:8px 22px 8px 8px;border-radius:999px;background:color-mix(in srgb,var(--paper) 78%,transparent);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 22px 44px -22px rgba(61,56,51,.55);white-space:nowrap;will-change:transform,filter,opacity}
+.chip__thumb{position:relative;width:clamp(50px,5vw,64px);aspect-ratio:1;border-radius:50%;overflow:hidden;flex:none;display:grid;place-items:center;color:var(--cream)}
+.chip__thumb svg{width:46%;height:46%}
+.chip__thumb .ph{position:absolute;inset:0;background:none}
+.chip__thumb .ph.missing::after{content:none}
+.chip__t{font:800 clamp(14px,1.4vw,18px)/1.05 var(--sans);letter-spacing:-.02em}
+.chip__t small{display:block;font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin-top:4px}
+
+/* ---------- ESTADÍSTICAS ---------- */
+.stats{position:relative;background:var(--terra-2);color:var(--cream);padding:clamp(80px,10vw,130px) 0;border-radius:clamp(28px,4vw,56px) clamp(28px,4vw,56px) 0 0;margin-top:-1px}
+.stats .eyebrow{color:var(--cream);opacity:.8}
+.stats .h2{color:var(--cream);margin-top:14px}
+.stats .h2 em{color:var(--ochre)}
+.stats__head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.stats__updated{font:600 13px/1 var(--sans);opacity:.75;display:flex;align-items:center;gap:8px}
+.stats__updated::before{content:"";width:8px;height:8px;border-radius:50%;background:#B8E0A0;box-shadow:0 0 0 4px rgba(184,224,160,.25);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(184,224,160,0)}}
+.bento{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto auto;gap:14px;margin-top:clamp(36px,5vw,56px)}
+.tile{background:rgba(245,242,235,.1);border:1px solid rgba(245,242,235,.2);border-radius:24px;padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;justify-content:space-between;min-height:170px}
+.tile__k{font:700 12px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+.tile__v{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.6vw,64px);line-height:1;letter-spacing:-.03em;margin-top:18px;font-variation-settings:"opsz" 144}
+.tile__s{font-size:13px;opacity:.75;margin-top:8px}
+.tile--chart{grid-row:1/3;background:var(--cream);color:var(--ink);border:0}
+.tile--chart .tile__k{color:var(--terra-2);opacity:1}
+.bars{display:flex;align-items:flex-end;gap:clamp(12px,2vw,22px);height:clamp(200px,22vw,280px);margin-top:24px}
+.bar{flex:1;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;height:100%;gap:10px}
+.bar__val{font:800 15px/1 var(--sans);text-align:center}
+.bar__fill{height:0;border-radius:14px 14px 4px 4px;transition:height 1.3s var(--ease)}
+.bar:nth-child(1) .bar__fill{background:var(--terra-2)}.bar:nth-child(2) .bar__fill{background:var(--ochre)}.bar:nth-child(3) .bar__fill{background:var(--sage)}
+.bar__lbl{font:700 12px/1 var(--sans);text-align:center;letter-spacing:.06em;text-transform:uppercase;opacity:.6}
+
+/* ---------- RESULTADOS ---------- */
+.results{padding:clamp(90px,11vw,150px) 0}
+.results__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,90px);align-items:center}
+.results .h2{margin:14px 0 24px}
+.results__lead{font-size:clamp(17px,1.5vw,20px);line-height:1.5;max-width:40ch}
+.results__lead+p{margin-top:14px;opacity:.75}
+.kpis{list-style:none;margin-top:30px;border-top:1px solid var(--line)}
+.kpis li{display:grid;grid-template-columns:minmax(130px,auto) 1fr;align-items:baseline;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.kpis b{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.4vw,44px);line-height:1;color:var(--terra-2);letter-spacing:-.03em}
+.kpis span{font-weight:600}
+.collage{position:relative;aspect-ratio:1/1.02}
+.collage .ph{position:absolute;border-radius:22px;box-shadow:0 30px 60px -30px rgba(61,56,51,.5)}
+.collage .c1{left:46%;top:0;width:31%;aspect-ratio:9/14;transform:rotate(2deg)}
+.collage .c2{left:68%;top:13%;width:31%;aspect-ratio:9/14;transform:rotate(5deg)}
+.collage .c3{left:50%;top:50%;width:31%;aspect-ratio:9/14;transform:rotate(-2deg)}
+.collage .phone{left:0;top:6%;width:44%;aspect-ratio:9/18.5;border-radius:34px;background:var(--ink);padding:8px;z-index:2;transform:rotate(-5deg)}
+.collage .phone .ph{position:relative;inset:auto;width:100%;height:100%;border-radius:27px;box-shadow:none}
+.collage .phone img{object-fit:cover}
+
+/* ---------- GALERÍA ---------- */
+.gallery{padding:0 0 clamp(90px,11vw,150px)}
+.gallery__head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(30px,4vw,50px)}
+.gallery__head .h2{margin-top:14px}
+.gallery__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.4vw,18px)}
+.gallery__grid > a:nth-child(3n+2){transform:translateY(clamp(20px,4vw,56px))}
+.tile-g{position:relative;display:block;border-radius:20px;overflow:hidden}
+.tile-g .ph{aspect-ratio:9/14}
+.tile-g img{transition:transform 1s var(--ease)}
+.tile-g:hover img{transform:scale(1.06)}
+.tile-g::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(61,56,51,.55));opacity:0;transition:opacity .4s}
+.tile-g:hover::after{opacity:1}
+.tile-g__views{position:absolute;left:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:7px 12px 7px 10px;border-radius:999px;background:rgba(30,26,23,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;font:800 13px/1 var(--sans);letter-spacing:-.01em;transition:opacity .3s}
+.tile-g__views svg{width:12px;height:12px}
+.tile-g:hover .tile-g__views{opacity:0}
+.tile-g__play{position:absolute;left:16px;bottom:16px;z-index:2;display:flex;align-items:center;gap:8px;color:var(--cream);font:700 13px/1 var(--sans);opacity:0;transform:translateY(8px);transition:.4s var(--ease)}
+.tile-g:hover .tile-g__play{opacity:1;transform:none}
+.tile-g__play i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(245,242,235,.25);backdrop-filter:blur(8px)}
+.tile-g__play svg{width:13px;height:13px}
+
+/* ---------- MIS PILARES ---------- */
+.pillars{position:relative;padding:clamp(110px,12vw,170px) 0 0;overflow:hidden}
+.pillars__title{text-align:center;position:relative;z-index:3}
+.pillars__title .h2{font-size:clamp(56px,10vw,148px);margin-top:12px}
+.pillars__stage{position:relative;display:grid;grid-template-columns:1fr minmax(260px,1.1fr) 1fr;align-items:center;gap:20px;margin-top:clamp(-70px,-5vw,-30px)}
+.pillars__photo{position:relative}
+.pillars__photo .arch{aspect-ratio:4/5.2;background:linear-gradient(180deg,color-mix(in srgb,var(--sage) 30%,var(--cream)),color-mix(in srgb,var(--sage) 55%,var(--cream)))}
+.pillars__photo .arch .ph{inset:8% 0 0}
+.pillars__col{display:flex;flex-direction:column;gap:clamp(70px,11vw,140px)}
+.pill{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:clamp(16px,1.7vw,22px) clamp(20px,2vw,28px);border-radius:999px;color:var(--cream);font:800 clamp(15px,1.6vw,21px)/1 var(--sans);letter-spacing:-.02em;box-shadow:0 18px 40px -22px rgba(61,56,51,.6);transition:transform .4s var(--ease)}
+.pill:hover{transform:translateY(-4px) rotate(-1.5deg)}
+.pill small{font:600 11px/1 var(--sans);letter-spacing:.12em;opacity:.7}
+.pillars__col.l .pill:nth-child(2){margin-left:14%}
+.pillars__col.r .pill:nth-child(2){margin-right:14%}
+.p-emp{background:var(--sage)}.p-hog{background:var(--terra)}.p-rec{background:var(--ochre)}.p-est{background:var(--brown)}
+
+/* ---------- BANDA DE MARCA ---------- */
+.band{position:relative;background:var(--brown);color:var(--cream);overflow:hidden}
+.marquee{display:flex;width:max-content;animation:marq 38s linear infinite;padding:clamp(26px,3.5vw,40px) 0;border-bottom:1px solid rgba(245,242,235,.15)}
+.marquee span{display:flex;align-items:center;gap:clamp(24px,3vw,48px);padding-right:clamp(24px,3vw,48px);white-space:nowrap}
+.marquee .script{color:var(--cream);font-size:clamp(52px,7vw,104px)}
+.marquee .display{color:var(--cream);font-size:clamp(52px,7vw,104px)}
+.marquee .star{color:var(--ochre);font-size:clamp(28px,3vw,44px)}
+@keyframes marq{to{transform:translateX(-50%)}}
+.band__bar{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;flex-wrap:wrap}
+.band__bar .h{font:700 15px/1 var(--sans)}
+.icons{display:flex;gap:10px}
+.icons a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;box-shadow:inset 0 0 0 1.5px rgba(245,242,235,.35);transition:background .3s,color .3s,box-shadow .3s}
+.icons a:hover{background:var(--cream);color:var(--brown);box-shadow:none}
+.icons svg{width:18px;height:18px}
+
+/* ---------- REDES / ROLES ---------- */
+.roles{padding:clamp(90px,11vw,150px) 0}
+.roles .wrap{display:grid;grid-template-columns:minmax(200px,.6fr) 1.4fr;gap:clamp(24px,5vw,72px);align-items:start}
+.roles .h2{font-size:clamp(34px,4.4vw,60px);margin-top:14px}
+.roles ul{list-style:none;border-top:1px solid var(--line)}
+.roles li{display:flex;justify-content:space-between;align-items:center;padding:clamp(8px,1.2vw,16px) 0;border-bottom:1px solid var(--line);font:800 clamp(40px,6.6vw,96px)/1 var(--sans);letter-spacing:-.05em;color:var(--sage);transition:color .4s,padding .4s var(--ease)}
+.roles li small{font:600 12px/1 var(--sans);letter-spacing:.14em;color:var(--ink);opacity:.4}
+.roles li:hover{color:var(--terra-2);padding-left:14px}
+.roles li:hover em{opacity:1}
+.roles li em{font-family:var(--serif);font-style:italic;font-weight:500;letter-spacing:-.02em;opacity:0;transition:opacity .4s;margin-left:.2em;color:var(--ochre)}
+
+.foot{padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;opacity:.6}
+.foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:900px){
+  .nav__links{display:none}
+  .hero__grid,.results__grid{grid-template-columns:1fr}
+  .hero__text{padding-bottom:10px;text-align:center}
+  .hero__tag{margin-left:auto;margin-right:auto}
+  .hero__cta{justify-content:center}
+  .hero__quote{margin-left:auto;margin-right:auto;padding:14px 0 0;border-left:0;border-top:3px solid var(--terra);display:inline-block}
+  .hero__photo{max-width:380px}
+  .float.f1{left:-4%}.float.f2{right:-4%}
+  .bento{grid-template-columns:1fr 1fr}
+  .tile--chart{grid-column:1/3;grid-row:auto}
+  .pillars__stage{grid-template-columns:1fr 1fr;margin-top:10px}
+  .pillars__photo{grid-column:1/3;grid-row:1;max-width:360px;justify-self:center;width:100%}
+  .pillars__col{gap:12px;padding-bottom:50px}
+  .pillars__col .pill{margin:0!important}
+  .roles .wrap{grid-template-columns:1fr}
+  .collage{max-width:520px;margin:0 auto;width:100%}
+}
+@media (max-width:560px){
+  .gallery__grid{gap:8px}
+  .tile-g{border-radius:12px}
+  .gallery__grid > a:nth-child(3n+2){transform:translateY(18px)}
+  .fol__net span{display:none}
+  .chip{padding:6px 14px 6px 6px;gap:8px;white-space:normal;max-width:150px}
+  .chip__t{font-size:13px}
+  .orbit{height:min(560px,64vh)}
+  .chip__t small{display:none}
+  .pill small{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .topics{height:auto}.topics__stick{position:relative;height:auto;padding:140px 0 80px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" aria-label="Principal">
+  <a class="nav__brand" href="#top">Millerleydi</a>
+  <div class="nav__links">
+    <a href="#temas">Temas</a><a href="#estadisticas">Estadísticas</a><a href="#resultados">Resultados</a><a href="#galeria">Galería</a>
+  </div>
+  <a class="btn" href="https://wa.me/573014889364?text=%C2%A1Hola%20Millerleydi%21%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20hablar%20contigo%20sobre%20una%20colaboraci%C3%B3n." target="_blank" rel="noopener">Contáctame</a>
+</nav>
+
+<!-- ========== PORTADA ========== -->
+<header class="hero" id="top">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <p class="hero__meta rv">Millerleydi Hoyos Arango · @soymillerleydi</p>
+      <h1 class="rv" data-d="1"><span class="script">Millerleydi</span><span class="display">Hoyos</span></h1>
+      <p class="hero__tag rv" data-d="2"><b>Alegre, extrovertida, creativa, dedicada.</b><br>Mamá, esposa, profe y emprendedora.</p>
+      <p class="hero__quote rv" data-d="2">¡Me encanta compartir mi <em>vida real</em> en familia!</p>
+      <div class="hero__cta rv" data-d="3">
+        <a class="btn" href="https://wa.me/573014889364?text=%C2%A1Hola%20Millerleydi%21%20%F0%9F%91%8B%20Vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20hablar%20contigo%20sobre%20una%20colaboraci%C3%B3n." target="_blank" rel="noopener">Contáctame <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost" href="#galeria">Ver contenido</a>
+      </div>
+    </div>
+    <div class="hero__photo rv" data-d="2">
+      <div class="arch"><div class="ph cutout" data-label="img/hero.webp"><img src="img/hero.webp" alt="Millerleydi Hoyos"></div></div>
+      <div class="float f2"><i style="background:var(--terra)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></i><span data-total>7.4 K<small>comunidad total</small></span></div>
+    </div>
+  </div>
+  <div class="followers" aria-label="Seguidores por red">
+    <div class="wrap">
+      <div class="fol"><div class="fol__n" data-stat="instagram">4.3 K</div><div class="fol__net"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span>Instagram</span></div></div>
+      <div class="fol"><div class="fol__n" data-stat="facebook">3 K</div><div class="fol__net"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.2c0-.8.2-1.2 1.4-1.2H17V2h-2.6C11.3 2 10.3 3.5 10.3 6v2H8v3h2.3v11H14V11h2.6l.4-3z"/></svg><span>Facebook</span></div></div>
+      <div class="fol"><div class="fol__n" data-stat="tiktok">100</div><div class="fol__net"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg><span>TikTok</span></div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ========== TEMAS DE INTERÉS ========== -->
+<section class="topics" id="temas" aria-label="Temas de interés">
+  <div class="topics__stick">
+    <div class="topics__head"><span class="eyebrow">Lo que comparto</span><h2 class="h2">Temas de <em>interés</em></h2></div>
+    <div class="orbit" id="orbit">
+      <div class="orbit__glow"></div>
+      <div class="orbit__ring" id="ring"></div>
+      <div class="orbit__center"><span class="script">Millerleydi</span><span class="display">Hoyos</span></div>
+      <div class="chip"><div class="chip__thumb" style="background:var(--terra)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2.5"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></div><div class="chip__t">Loncheras saludables<small>Recetas</small></div></div>
+      <div class="chip"><div class="chip__thumb" style="background:var(--ochre)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="6" r="2.2"/><circle cx="16.5" cy="6" r="2.2"/><path d="M4 20v-5a3.5 3.5 0 0 1 7 0M13 15a3.5 3.5 0 0 1 7 0v5"/></svg></div><div class="chip__t">Familia<small>Día a día</small></div></div>
+      <div class="chip"><div class="chip__thumb" style="background:var(--sage)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c2 2 10 2 12 0v-5"/></svg></div><div class="chip__t">Educación<small>Profe</small></div></div>
+      <div class="chip"><div class="chip__thumb" style="background:var(--ochre)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6a2 2 0 1 1 2.6 1.9c-.4.1-.6.5-.6.9V10l9 6.5a1 1 0 0 1-.6 1.8H3.6a1 1 0 0 1-.6-1.8L12 10"/></svg></div><div class="chip__t">Moda<small>Looks</small></div></div>
+      <div class="chip"><div class="chip__thumb" style="background:var(--brown)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="12" width="8" height="8" rx="1"/><rect x="13" y="12" width="8" height="8" rx="1"/><rect x="8" y="4" width="8" height="8" rx="1"/></svg></div><div class="chip__t">Estimulación temprana<small>Crianza</small></div></div>
+    </div>
+    <p class="topics__hint">Sigue bajando ↓</p>
+  </div>
+</section>
+
+<!-- ========== ESTADÍSTICAS ========== -->
+<section class="stats" id="estadisticas" aria-label="Estadísticas">
+  <div class="wrap">
+    <div class="stats__head rv">
+      <div><span class="eyebrow">Comunidad</span><h2 class="h2">Estadís<em>ticas</em></h2></div>
+      <p class="stats__updated" id="updated">Datos de la comunidad</p>
+    </div>
+    <div class="bento" id="bento">
+      <div class="tile tile--chart rv"><div class="tile__k">Seguidores por red</div><div class="bars" id="bars" aria-hidden="true"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RESULTADOS ========== -->
+<section class="results" id="resultados" aria-label="Resultados de estrategia">
+  <div class="wrap results__grid">
+    <div>
+      <span class="eyebrow rv">Caso de estudio · 4 meses</span>
+      <h2 class="h2 rv" data-d="1">Resultados de <em>estrategia</em></h2>
+      <p class="results__lead rv" data-d="2">Diseñé e implementé una estrategia de contenido para Instagram enfocada en fortalecer la marca personal, aumentar su visibilidad y conectar con nuevas audiencias.</p>
+      <p class="rv" data-d="2">En tan solo 4 meses, la estrategia generó resultados como:</p>
+      <ul class="kpis">
+        <li class="rv"><b data-res="seguidores">+XX K</b><span>nuevos seguidores</span></li>
+        <li class="rv" data-d="1"><b data-res="reproducciones">+XX M</b><span>reproducciones en Reels</span></li>
+        <li class="rv" data-d="2"><b data-res="alcance">+XX K</b><span>cuentas alcanzadas</span></li>
+        <li class="rv" data-d="3"><b data-res="interacciones">+XX K</b><span>interacciones con el contenido</span></li>
+      </ul>
+    </div>
+    <div class="collage rv" data-d="2">
+      <div class="ph c1" data-label="reel"><img src="img/reel-01-ecografia.jpg" alt="Reel: así se enteró mi esposo que estaba en embarazo" loading="lazy"></div>
+      <div class="ph c2" data-label="reel"><img src="img/reel-03-papa-ilusionado.jpg" alt="Reel: papá ilusionado" loading="lazy"></div>
+      <div class="ph c3" data-label="reel"><img src="img/reel-02-cuarto-bebe.jpg" alt="Reel: entrando al cuarto de mi bebé" loading="lazy"></div>
+      <div class="ph phone"><div class="ph" data-label="img/resultados-celular.png"><img src="img/resultados-celular.png" alt="Estadísticas de Instagram" loading="lazy"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GALERÍA ========== -->
+<section class="gallery" id="galeria" aria-label="Galería de contenido">
+  <div class="wrap">
+    <div class="gallery__head rv">
+      <div><span class="eyebrow">Reels destacados</span><h2 class="h2">Galería de <em>contenido</em></h2></div>
+      <a class="btn btn--ghost" href="https://www.instagram.com/soymillerleydi/" target="_blank" rel="noopener">Ver Instagram</a>
+    </div>
+    <div class="gallery__grid" id="gallery"></div>
+  </div>
+</section>
+
+<!-- ========== MIS PILARES ========== -->
+<section class="pillars" aria-label="Mis pilares">
+  <div class="wrap">
+    <div class="pillars__title rv"><span class="eyebrow">De qué hablo</span><h2 class="h2">Mis <em>pilares</em></h2></div>
+    <div class="pillars__stage">
+      <div class="pillars__col l"><span class="pill p-emp rv">Emprendedora <small>01</small></span><span class="pill p-rec rv" data-d="2">Recomendaciones <small>03</small></span></div>
+      <div class="pillars__photo rv" data-d="1"><div class="arch"><div class="ph cutout" data-label="img/familia.webp"><img src="img/familia.webp" alt="Millerleydi con su familia" loading="lazy"></div></div></div>
+      <div class="pillars__col r"><span class="pill p-hog rv" data-d="1">Hogar <small>02</small></span><span class="pill p-est rv" data-d="3">Estilo de vida <small>04</small></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BANDA DE MARCA ========== -->
+<section class="band" aria-label="Millerleydi Hoyos">
+  <div class="marquee" aria-hidden="true">
+    <span><b class="script">Millerleydi</b><b class="display">Hoyos</b><b class="star">✦</b><b class="script">Millerleydi</b><b class="display">Hoyos</b><b class="star">✦</b></span>
+    <span><b class="script">Millerleydi</b><b class="display">Hoyos</b><b class="star">✦</b><b class="script">Millerleydi</b><b class="display">Hoyos</b><b class="star">✦</b></span>
+  </div>
+  <div class="wrap band__bar">
+    <div class="h">@soymillerleydi</div>
+    <div class="icons">
+      <a href="https://www.instagram.com/soymillerleydi/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+            <a href="https://www.facebook.com/soymillerleydi" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.2c0-.8.2-1.2 1.4-1.2H17V2h-2.6C11.3 2 10.3 3.5 10.3 6v2H8v3h2.3v11H14V11h2.6l.4-3z"/></svg></a>
+      <a href="https://www.tiktok.com/@soymillerleydi" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REDES ========== -->
+<section class="roles" aria-label="Quién soy">
+  <div class="wrap">
+    <div class="rv"><span class="eyebrow">En redes soy</span><h2 class="h2">Redes</h2></div>
+    <ul>
+      <li class="rv">mamá<small>01</small></li>
+      <li class="rv" data-d="1">Esposa<small>02</small></li>
+      <li class="rv" data-d="2">Profe<small>03</small></li>
+      <li class="rv" data-d="3">Emprendedora<small>04</small></li>
+      <li class="rv" data-d="4">Booklover<small>05</small></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap"><span>© <span id="yr"></span> Millerleydi Hoyos Arango</span><span>@soymillerleydi</span></div></footer>
+
+<script>
+/* =========================================================
+   DATOS — edita aquí, o sube stats.json junto a esta página
+   con la misma forma y se usará automáticamente.
+   ========================================================= */
+const DATA = {
+  actualizado: "",
+  seguidores: { instagram: 4300, tiktok: 100, facebook: 3000 },
+  tarjetas: [
+    { titulo: "Comunidad total", valor: null, nota: "Instagram + Facebook + TikTok" },
+    { titulo: "Visualizaciones · 90 días", valor: 2715385, nota: "Instagram 1,77 M · Facebook 946 K" },
+    { titulo: "Espectadores · 90 días", valor: 1052493, nota: "Cuentas únicas que vieron el contenido" },
+    { titulo: "Nuevas audiencias", valor: "90,8 %", nota: "De las visualizaciones vienen de no seguidores" }
+  ],
+  resultados: { seguidores: "", reproducciones: "+2.5 M", alcance: "+1 M", interacciones: "" },
+  galeria: [   // 3 reels fijados + 6 con más vistas, de mayor a menor (se excluyó "Maleta para la clínica" por parecerse a "Maleta para mi bebé") · vistas del 2 nov 2026
+    { img: "img/reel-01-ecografia.jpg", enlace: "https://www.instagram.com/reel/DaS16Yby5ju/", vistas: "7,5 M" },
+    { img: "img/reel-02-cuarto-bebe.jpg", enlace: "https://www.instagram.com/reel/DdfEkp4y4mI/", vistas: "115 mil" },
+    { img: "img/reel-03-papa-ilusionado.jpg", enlace: "https://www.instagram.com/reel/DbHjF2yyren/", vistas: "284 mil" },
+    { img: "img/reel-04-maleta-bebe.jpg", enlace: "https://www.instagram.com/reel/De-Pf1JyV6Z/", vistas: "96,7 mil" },
+    { img: "img/reel-05-sindrome-nido.jpg", enlace: "https://www.instagram.com/reel/Dd7FEq7yJoy/", vistas: "84,9 mil" },
+    { img: "img/reel-06-30-semanas.jpg", enlace: "https://www.instagram.com/reel/DcMrN1xSwpL/", vistas: "40,6 mil" },
+    { img: "img/reel-07-embarazada-enero.jpg", enlace: "https://www.instagram.com/reel/Da0pH_rSIhL/", vistas: "39,8 mil" },
+    { img: "img/reel-08-reaccion-amigas.jpg", enlace: "https://www.instagram.com/reel/Dbj2lmXNzsB/", vistas: "34,7 mil" },
+    { img: "img/reel-09-bien-mamis.jpg", enlace: "https://www.instagram.com/reel/DdMoKkySHLk/", vistas: "18,8 mil" }
+  ]
+};
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = s => document.querySelector(s);
+const fmt = n => n == null || n === "" ? "—" : typeof n === "string" ? n
+  : n >= 1e6 ? (n/1e6).toFixed(1).replace(/\.0$/,"") + " M"
+  : n >= 1e3 ? (n/1e3).toFixed(1).replace(/\.0$/,"") + " K" : String(n);
+/* vistas al estilo de Instagram: 7,5 M · 96,7 mil · 4.580 */
+const fmtV = n => n >= 1e6 ? (n/1e6).toFixed(1).replace(/\.0$/,'').replace('.',',') + ' M'
+  : n >= 1e4 ? (n/1e3).toFixed(1).replace(/\.0$/,'').replace('.',',') + ' mil'
+  : n.toLocaleString('es-CO');
+$('#yr').textContent = new Date().getFullYear();
+
+/* imágenes faltantes */
+function wireImages(root=document){
+  root.querySelectorAll('.ph img').forEach(img=>{
+    const miss=()=>img.closest('.ph').classList.add('missing');
+    if (img.complete && img.naturalWidth===0) miss();
+    img.addEventListener('error',miss,{once:true});
+  });
+}
+
+/* contadores animados */
+function countUp(el, to){
+  if (reduce || typeof to !== 'number'){ el.firstChild.nodeValue = fmt(to); return; }
+  const t0 = performance.now(), d = 1400;
+  const step = t => { const p = Math.min(1,(t-t0)/d), e = 1-Math.pow(1-p,3);
+    el.firstChild.nodeValue = fmt(p<1 ? Math.round(to*e) : to); if (p<1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+
+/* aparición al hacer scroll */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const t = e.target; t.classList.add('in');
+  if (t.dataset.count != null) countUp(t, +t.dataset.count);
+  if (t.classList.contains('tile--chart')) t.querySelectorAll('.bar__fill').forEach(b=>b.style.height=b.dataset.h+'%');
+  io.unobserve(t);
+}), {threshold:.18, rootMargin:'0px 0px -6% 0px'});
+const observe = root => root.querySelectorAll('.rv,[data-count]').forEach(el=>io.observe(el));
+
+function render(d){
+  const s = d.seguidores || {};
+  const total = Object.values(s).reduce((a,b)=>a+(+b||0),0);
+  document.querySelectorAll('[data-stat]').forEach(el=>{ const v=s[el.dataset.stat]; if(v!=null){ el.textContent=fmt(v); el.dataset.count=v; }});
+  const tot = $('[data-total]'); if (tot) tot.firstChild.nodeValue = fmt(total);
+
+  const nets=[["Instagram",s.instagram],["Facebook",s.facebook],["TikTok",s.tiktok]].filter(x=>x[1]!=null);
+  const max=Math.max(1,...nets.map(x=>+x[1]));
+  $('#bars').innerHTML = nets.map(([n,v])=>`<div class="bar"><div class="bar__val">${fmt(v)}</div><div class="bar__fill" data-h="${Math.max(5,v/max*100)}"></div><div class="bar__lbl">${n}</div></div>`).join('');
+  const chartIn = $('.tile--chart').classList.contains('in');
+  if (chartIn) document.querySelectorAll('.bar__fill').forEach(b=>b.style.height=b.dataset.h+'%');
+
+  const bento=$('#bento'); bento.querySelectorAll('.tile:not(.tile--chart)').forEach(t=>t.remove());
+  (d.tarjetas||[]).forEach((c,i)=>{
+    const v = c.valor ?? (i===0 ? total : null);
+    bento.insertAdjacentHTML('beforeend',`<div class="tile rv" data-d="${i+1}"><div class="tile__k">${c.titulo}</div><div><div class="tile__v"${typeof v==='number'?` data-count="${v}"`:''}>${fmt(v)}</div><div class="tile__s">${c.nota||''}</div></div></div>`);
+  });
+
+  $('#updated').textContent = d.actualizado ? `Actualizado: ${d.actualizado}` : 'Datos de la comunidad';
+  const r=d.resultados||{}; document.querySelectorAll('[data-res]').forEach(el=>{ if(r[el.dataset.res]) el.textContent=r[el.dataset.res]; });
+
+  $('#gallery').innerHTML=(d.galeria||[]).map((g,i)=>{ const code=((g.enlace||'').match(/reel\/([^/]+)/)||[])[1]; const live=d.reels&&code?d.reels[code]:null; if(typeof live==='number') g={...g,vistas:fmtV(live)}; const ext=g.enlace&&g.enlace!=='#';
+    return `<a class="tile-g rv" data-d="${i%3}" href="${g.enlace||'#'}" ${ext?'target="_blank" rel="noopener"':''}><div class="ph" data-label="${g.img}"><img src="${g.img}" alt="Contenido ${i+1}" loading="lazy"></div>${g.vistas?`<span class="tile-g__views"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8 5v14l11-7z" fill="currentColor" stroke="none"/></svg>${g.vistas}</span>`:''}<span class="tile-g__play"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></i>Ver reel</span></a>`; }).join('');
+  wireImages($('#gallery'));
+  observe(document);
+}
+
+/* ---------- órbita 3D guiada por el scroll ---------- */
+(function orbit(){
+  const sec=$('#temas'), orb=$('#orbit'), ring=$('#ring');
+  const chips=[...orb.querySelectorAll('.chip')];
+  let target=0, cur=0, Rx=0, Ry=0;
+  function size(){
+    const w=orb.clientWidth, h=orb.clientHeight;
+    Rx=Math.min(w*.42, 500); Ry=Math.min(h*.36, Rx*.42);
+    if (w<600){ Rx=w*.27; Ry=Math.min(h*.40, 210); }
+    ring.style.width=(Rx*2)+'px'; ring.style.height=(Ry*2)+'px';
+  }
+  function progress(){
+    const r=sec.getBoundingClientRect(), span=r.height-innerHeight;
+    return span>0 ? Math.min(1,Math.max(0,-r.top/span)) : 0;
+  }
+  function place(base){
+    chips.forEach((c,i)=>{
+      const a=base + i*(Math.PI*2/chips.length);
+      const x=Math.sin(a)*Rx, y=Math.cos(a)*Ry, z=Math.cos(a);   // z=1 al frente (abajo), -1 atrás (arriba)
+      const k=(z+1)/2, sc=.68+.42*k;
+      c.style.transform=`translate(-50%,-50%) translate(${x.toFixed(1)}px,${y.toFixed(1)}px) scale(${sc.toFixed(3)})`;
+      c.style.zIndex = z>0 ? 25 : 10;
+      c.style.opacity=(.45+.55*k).toFixed(2);
+      c.style.filter=`blur(${((1-k)*2.2).toFixed(2)}px)`;
+    });
+  }
+  function loop(){
+    cur += (target-cur)*.09;
+    place(cur);
+    if (Math.abs(target-cur)>.0005) requestAnimationFrame(loop); else running=false;
+  }
+  let running=false;
+  function onScroll(){ target = progress()*Math.PI*2*1.15; if(!running){ running=true; requestAnimationFrame(loop);} }
+  size(); place(0);
+  if (!reduce){ addEventListener('scroll',onScroll,{passive:true}); }
+  addEventListener('resize',()=>{ size(); place(cur); });
+  onScroll();
+})();
+
+/* nav que se esconde al bajar */
+(function(){ let last=scrollY; const nav=$('#nav');
+  addEventListener('scroll',()=>{ const y=scrollY; nav.classList.toggle('hide', y>last && y>300); last=y; },{passive:true}); })();
+
+wireImages();
+render(DATA);
+fetch('stats.json',{cache:'no-store'}).then(r=>r.ok?r.json():null)
+  .then(j=>j&&render({...DATA,...j,seguidores:{...DATA.seguidores,...(j.seguidores||{})}})).catch(()=>{});
+</script>
+</body>
+</html>
