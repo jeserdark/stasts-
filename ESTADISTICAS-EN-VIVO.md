@@ -1,6 +1,6 @@
 # Estadísticas en vivo — instalación
 
-Cada hora, GitHub ejecuta `scripts/update-stats.mjs`, consulta la API de Instagram
+Cada 15 días, GitHub ejecuta `scripts/update-stats.mjs`, consulta la API de Instagram
 con el token de Miller y reescribe `stats.json`. La página lee ese archivo, así que
 las cifras se actualizan solas. El token nunca está en la página.
 
@@ -27,6 +27,6 @@ Facebook (3 K), TikTok (100) y los "Resultados de estrategia" se editan a mano e
 6. Conecta tu dominio en la opción de hosting que elegiste.
 
 ## Para tener en cuenta
-- La tarea corre cada hora. GitHub a veces la retrasa unos minutos.
+- La tarea corre los días 1 y 16 de cada mes (8:17 a. m. hora Colombia). También se puede correr a mano con "Run workflow".
 - Si Miller cambia su contraseña o quita el acceso a la app, hay que generar un token nuevo y reemplazar `IG_TOKEN`.
 - Para correrlo en tu computador: `IG_TOKEN=EAA… node scripts/update-stats.mjs` (requiere Node 18 o superior).
