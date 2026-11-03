@@ -49,7 +49,7 @@ for (const m of ['views', 'reach', 'total_interactions', 'accounts_engaged']) {
 
 const old = Object.fromEntries((prev.tarjetas || []).map(t => [t.id, t]));
 const card = (id, titulo, valor, nota) => (valor == null ? old[id] : { id, titulo, valor, nota }) || { id, titulo, valor: null, nota };
-out.tarjetas = [
+if (Object.keys(metrics).length) out.tarjetas = [
   { id: 'total', titulo: 'Comunidad total', valor: null, nota: 'Instagram + Facebook + TikTok' },
   card('views', `Visualizaciones · ${DAYS} días`, metrics.views, 'Todo el contenido de Instagram'),
   card('reach', `Cuentas alcanzadas · ${DAYS} días`, metrics.reach, 'Cuentas únicas que vieron el contenido'),
@@ -72,7 +72,7 @@ for (const m of media.filter(m => m.media_product_type === 'REELS')) {
   if (typeof v === 'number') reels[m.shortcode] = v;
 }
 if (media.length) console.log(`✓ vistas de ${Object.keys(reels).length} reels`);
-out.reels = reels;
+if (Object.keys(reels).length) out.reels = reels;
 
 out.actualizado = new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota', dateStyle: 'medium', timeStyle: 'short' });
 await writeFile(FILE, JSON.stringify(out, null, 2) + '\n');

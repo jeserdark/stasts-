@@ -10,32 +10,5 @@
     "reproducciones": "+2.5 M",
     "alcance": "+1 M",
     "interacciones": ""
-  },
-  "tarjetas": [
-    {
-      "id": "total",
-      "titulo": "Comunidad total",
-      "valor": null,
-      "nota": "Instagram + Facebook + TikTok"
-    },
-    {
-      "id": "views",
-      "titulo": "Visualizaciones · 30 días",
-      "valor": null,
-      "nota": "Todo el contenido de Instagram"
-    },
-    {
-      "id": "reach",
-      "titulo": "Cuentas alcanzadas · 30 días",
-      "valor": null,
-      "nota": "Cuentas únicas que vieron el contenido"
-    },
-    {
-      "id": "interactions",
-      "titulo": "Interacciones · 30 días",
-      "valor": null,
-      "nota": "Me gusta, comentarios, guardados y compartidos"
-    }
-  ],
-  "reels": {}
+  }
 }
