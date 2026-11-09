@@ -36,6 +36,29 @@ if (profile) {
   console.log(`✓ @${profile.username}: ${profile.followers_count} seguidores`);
 }
 
+// 1b) Seguidores de la página de Facebook
+//     Busca la página en este orden: secreto FB_PAGE_ID → páginas del token → usuario "soymillerleydi".
+//     Si nada funciona, se conserva el número manual de stats.json.
+{
+  const FB_USER = process.env.FB_USERNAME || 'soymillerleydi';
+  const candidates = [];
+  if (process.env.FB_PAGE_ID) candidates.push(process.env.FB_PAGE_ID);
+  const accounts = await safe('páginas del token', () => api('me/accounts', { fields: 'id,name,username', limit: 50 }));
+  const list = accounts?.data || [];
+  const mine = list.find(p => (p.username || '').toLowerCase() === FB_USER.toLowerCase()) || (list.length === 1 ? list[0] : null);
+  if (mine) candidates.push(mine.id);
+  candidates.push(FB_USER);
+  for (const id of candidates) {
+    const page = await safe(`página de Facebook (${id})`, () => api(id, { fields: 'name,followers_count,fan_count' }));
+    const n = page?.followers_count ?? page?.fan_count;
+    if (typeof n === 'number') {
+      out.seguidores = { ...(out.seguidores || {}), facebook: n };
+      console.log(`✓ Facebook "${page.name}": ${n} seguidores`);
+      break;
+    }
+  }
+}
+
 // 2) Métricas de la cuenta, últimos 30 días
 const until = Math.floor(Date.now() / 1000);
 const since = until - DAYS * 86400;
